@@ -1,5 +1,6 @@
 ---
 title: example post
+date: 02015-08-23
 ---
 
 Mauris in lorem nisl. Maecenas tempus facilisis ante, eget viverra nisl
@@ -14,3 +15,5 @@ Nunc sed hendrerit orci. Nulla mollis consequat lorem ac blandit. Ut et turpis
 mauris. Nulla est odio, posuere id ullamcorper sit amet, tincidunt vel justo.
 Curabitur placerat tincidunt varius. Nulla vulputate, ipsum eu consectetur
 mollis, dui nibh aliquam neque, at ultricies leo ligula et arcu.
+
+2
