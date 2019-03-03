@@ -10,6 +10,10 @@ import           System.FilePath.Posix
 --------------------------------------------------------------------------------
 main :: IO ()
 main = hakyllWith conf $ do
+    match (fromList static) $ do
+        route idRoute
+        compile copyFileCompiler
+
     match "images/*" $ do
         route   idRoute
         compile copyFileCompiler
@@ -72,6 +76,10 @@ postCtx :: Context String
 postCtx =
     dateField "date" "0%0Y-%m-%d" `mappend`
     defaultContext
+
+--------------------------------------------------------------------------------
+static :: [Identifier]
+static = ["CNAME"]
 
 --------------------------------------------------------------------------------
 conf :: Configuration
