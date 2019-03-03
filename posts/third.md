@@ -1,5 +1,6 @@
 ---
-title: example 2
+title: third
+date: 02019-03-04
 ---
 
 hello lorem ipsum etc etc.
@@ -10,3 +11,5 @@ main = putStrLn "Hello World"
 ```
 
 bye.
+
+22
