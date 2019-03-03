@@ -1,12 +1,14 @@
 --------------------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE QuasiQuotes #-}
 import           Data.Monoid (mappend)
 import           Hakyll
+import           Data.String.Here (hereFile)
 
 
 --------------------------------------------------------------------------------
 main :: IO ()
-main = hakyll $ do
+main = hakyllWith conf $ do
     match "images/*" $ do
         route   idRoute
         compile copyFileCompiler
@@ -65,4 +67,12 @@ postCtx :: Context String
 postCtx =
     dateField "date" "%B %e, %Y" `mappend`
     defaultContext
+
+--------------------------------------------------------------------------------
+conf :: Configuration
+conf = defaultConfiguration
+    { deployCommand = myDeployCommand }
+
+myDeployCommand :: String
+myDeployCommand = [hereFile|sh/deploy.sh|]
 
