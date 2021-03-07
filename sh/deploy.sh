@@ -5,8 +5,8 @@ git stash
 git checkout develop
 
 # Build new files
-stack exec myblog clean
-stack exec myblog build
+cabal run akrmn-github-io clean
+cabal run akrmn-github-io build
 
 # Get previous files
 git fetch --all
