@@ -10,7 +10,7 @@ cabal run akrmn-github-io build
 
 # Get previous files
 git fetch --all
-git checkout -b master --track origin/master
+git checkout -b site --track origin/site
 
 # Overwrite existing files with new files
 rsync -a --filter='P _site/'      \
@@ -27,9 +27,9 @@ git add -A
 git commit -m "Publish."
 
 # Push
-git push origin master:master
+git push origin site:site
 
 # Restoration
 git checkout develop
-git branch -D master
+git branch -D site
 git stash pop
